@@ -1,4 +1,4 @@
-import Lists.LinkedList;
+import Lists.*;
 
 public class Main {
 
@@ -6,21 +6,16 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		LinkedList<String> list = new LinkedList<String>();
-		
+		AbstractList<String> list = new ArrayList<String>();
+
 		System.out.println(list);
-		
+
 		list.addFirst("Amir");
 		list.addFirst("Hooman");
 		list.addFirst("Shahnaz");
-		
-		list.remove("Amir");
-		list.remove("Hooman");
-		list.remove("Shahnaz");
-		
-		System.out.println(list);
-		System.out.println(list.first());
-		System.out.println(list.last());
+
+		System.out.println(list.toString());
+
 	}
 
 }

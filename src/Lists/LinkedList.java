@@ -3,7 +3,7 @@ package Lists;
 import java.util.Iterator;
 
 public class LinkedList<T> extends AbstractList<T> {
-	public final boolean _DUPLICATES_ALLOWED_ = true;
+	public boolean _DUPLICATES_ALLOWED_ = true;
 
 	private int size = 0;
 	private Node<T> listTail;
@@ -286,7 +286,7 @@ public class LinkedList<T> extends AbstractList<T> {
 		int index = 0;
 		Node<T> ref = listHead;
 
-		while (node != null) {
+		while (ref != null && node != null) {
 			if (ref.data.equals(node.data)) {
 				return index;
 			}
@@ -332,13 +332,18 @@ public class LinkedList<T> extends AbstractList<T> {
 	 */
 	@Override
 	public String toString() {
-		String s = "";
+		String str = "";
+
+		if (size() == 0) {
+			return "LinkedList is empty!";
+		}
+
 		Node<T> node = listHead;
 		while (node != null) {
-			s += "=> " + node.toString() + "\n";
+			str += "=> " + node.toString() + "\n";
 			node = node.next;
 		}
-		return s;
+		return str;
 	}
 
 	/*

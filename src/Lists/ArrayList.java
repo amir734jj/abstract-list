@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public class ArrayList<T> extends AbstractList<T> {
-	public final boolean _DUPLICATES_ALLOWED_ = true;
+	public boolean _DUPLICATES_ALLOWED_ = true;
 
 	private int size;
 	private T[] array;
@@ -184,11 +184,17 @@ public class ArrayList<T> extends AbstractList<T> {
 
 	@Override
 	public String toString() {
-		String str = "[ ";
-		for (int i = 0; i < size; i++)
-			if (array[i] != null)
-				str += array[i].toString() + (i != size - 1 ? " , " : "");
-		return str + " ]";
+		if (size() == 0) {
+			return "ArrayList is empty!";
+		}
+
+		String str = "";
+
+		for (int i = 0; i < size(); i++) {
+			str += "=> " + array[i].toString() + "\n";
+		}
+
+		return str;
 	}
 
 }
