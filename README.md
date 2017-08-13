@@ -1,6 +1,9 @@
-# LinkedList
+# Abstract List
+(simple) Implementation of Abstract List in java!
+- ArrayList
+- LinkedList
 
-(simple) Implementation of Linked-list in java!
+#### Below are the list of supported methods: 
 
 | Modifier and Type     | Method                         |
 |-----------------------|--------------------------------|
